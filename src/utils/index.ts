@@ -1,1 +1,1 @@
-export * from './vscode';
+export * from './vscode'

@@ -1,35 +1,37 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { vscodeWebview } from '@tomjs/vscode-webview';
-import { allComponents, provideVSCodeDesignSystem } from '@vscode/webview-ui-toolkit';
-import { vscode } from './utils';
+import { vscodeWebview } from '@tomjs/vscode-webview'
+import { allComponents, provideVSCodeDesignSystem } from '@vscode/webview-ui-toolkit'
+import { ref } from 'vue'
+import { vscode } from './utils'
 
-provideVSCodeDesignSystem().register(allComponents);
+provideVSCodeDesignSystem().register(allComponents)
 
 function onPostMessage() {
-  vscodeWebview.postMessage('hello', 'Hey there partner! 🤠');
+  vscodeWebview.postMessage('hello', 'Hey there partner! 🤠')
 }
 
-vscodeWebview.on('hello', data => {
-  console.log('on message:', data);
-});
+vscodeWebview.on('hello', (data) => {
+  console.log('on message:', data)
+})
 
-const message = ref('');
-const state = ref('');
+const message = ref('')
+const state = ref('')
 
-const onSetState = () => {
-  vscode.setState(state.value);
-};
+function onSetState() {
+  vscode.setState(state.value)
+}
 
-const onGetState = async () => {
-  state.value = (await vscode.getState()) as string;
-};
+async function onGetState() {
+  state.value = (await vscode.getState()) as string
+}
 </script>
 
 <template>
   <main>
     <h1>Hello Vue!</h1>
-    <vscode-button @click="onPostMessage">Test VSCode Message</vscode-button>
+    <vscode-button @click="onPostMessage">
+      Test VSCode Message
+    </vscode-button>
     <div>
       <vscode-text-field :value="message" @input="e => (message = e.target.value)">
         Please enter a message
@@ -42,8 +44,12 @@ const onGetState = async () => {
       </vscode-text-field>
       <div>State is: {{ state }}</div>
       <div>
-        <vscode-button @click="onSetState">setState</vscode-button>
-        <vscode-button style="margin-left: 8px" @click="onGetState">getState</vscode-button>
+        <vscode-button @click="onSetState">
+          setState
+        </vscode-button>
+        <vscode-button style="margin-left: 8px" @click="onGetState">
+          getState
+        </vscode-button>
       </div>
     </div>
   </main>

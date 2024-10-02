@@ -1,14 +1,14 @@
 {
+  "publisher": "tomjs-test",
   "name": "template-vue",
-  "private": true,
   "version": "0.0.0",
-  "description": "vite + vue",
+  "private": true,
+  "description": "vscode extension with vue framework.",
+  "main": "dist/extension/index.js",
   "engines": {
     "node": ">=18",
     "vscode": "^1.75.0"
   },
-  "publisher": "tomjs-test",
-  "main": "dist/extension/index.js",
   "activationEvents": [],
   "contributes": {
     "commands": [
@@ -21,7 +21,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@tomjs/vscode-webview": "^1.1.0",
@@ -29,6 +31,7 @@
     "vue": "^3.5.10"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
     "@tomjs/tsconfig": "^1.7.1",
     "@tomjs/vite-plugin-vscode": "2.6.0",
     "@types/node": "^22.7.4",
@@ -36,6 +39,7 @@
     "@types/vscode-webview": "^1.57.5",
     "@vitejs/plugin-vue": "^5.1.4",
     "cross-env": "^7.0.3",
+    "eslint": "^9.11.1",
     "typescript": "~5.6.2",
     "vite": "^5.4.8",
     "vue-tsc": "^2.1.6"
