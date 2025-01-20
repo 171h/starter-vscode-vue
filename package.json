@@ -26,22 +26,23 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@tomjs/vscode-webview": "^1.1.0",
+    "@tomjs/vscode-webview": "^2.0.2",
     "@vscode/webview-ui-toolkit": "^1.4.0",
-    "vue": "^3.5.10"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.3",
+    "@antfu/eslint-config": "^3.14.0",
     "@tomjs/tsconfig": "^1.7.1",
-    "@tomjs/vite-plugin-vscode": "2.6.0",
-    "@types/node": "^22.7.4",
-    "@types/vscode": "^1.93.0",
+    "@tomjs/vite-plugin-vscode": "3.2.1",
+    "@types/node": "^22.10.7",
+    "@types/vscode": "^1.96.0",
     "@types/vscode-webview": "^1.57.5",
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue": "^5.2.1",
     "cross-env": "^7.0.3",
-    "eslint": "^9.11.1",
-    "typescript": "~5.6.2",
-    "vite": "^5.4.8",
-    "vue-tsc": "^2.1.6"
-  }
+    "eslint": "^9.18.0",
+    "typescript": "~5.7.3",
+    "vite": "^6.0.7",
+    "vue-tsc": "^2.2.0"
+  },
+  "packageManager": "pnpm@9.10.0"
 }
