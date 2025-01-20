@@ -16,6 +16,9 @@ export default defineConfig({
       webview: {
         // csp: '<meta http-equiv="Content-Security-Policy" />',
       },
+      extension: {
+        entry: 'src/extension/index.ts',
+      },
     }),
   ],
 })
