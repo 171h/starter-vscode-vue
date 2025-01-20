@@ -5,6 +5,7 @@
   "private": true,
   "description": "vscode extension with vue framework.",
   "main": "dist/extension/index.js",
+  "l10n": "./src/extension/l10n",
   "engines": {
     "node": ">=18",
     "vscode": "^1.75.0"
@@ -14,7 +15,7 @@
     "commands": [
       {
         "command": "hello-world.showHelloWorld",
-        "title": "Hello World: Show"
+        "title": "%hello-world.showHelloWorld.title%"
       }
     ]
   },
@@ -23,10 +24,16 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies",
+    "l10n": "npx @vscode/l10n-dev export --outDir ./src/extension/l10n ./src/extension"
   },
   "dependencies": {
     "@tomjs/vscode-webview": "^2.0.2",
+    "@vscode/l10n": "^0.0.18",
     "@vscode/webview-ui-toolkit": "^1.4.0",
     "vue": "^3.5.13"
   },
@@ -38,10 +45,14 @@
     "@types/vscode": "^1.96.0",
     "@types/vscode-webview": "^1.57.5",
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/ui": "^3.0.2",
+    "@vscode/l10n-dev": "^0.0.35",
+    "@vscode/vsce": "^3.2.1",
     "cross-env": "^7.0.3",
     "eslint": "^9.18.0",
     "typescript": "~5.7.3",
     "vite": "^6.0.7",
+    "vitest": "^3.0.2",
     "vue-tsc": "^2.2.0"
   },
   "packageManager": "pnpm@9.10.0"

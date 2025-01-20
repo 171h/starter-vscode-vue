@@ -1,5 +1,5 @@
 import type { Disposable, ExtensionContext, WebviewPanel } from 'vscode'
-import { ViewColumn, window } from 'vscode'
+import { l10n, ViewColumn, window } from 'vscode'
 import { WebviewHelper } from './helper'
 
 export class MainPanel {
@@ -27,7 +27,7 @@ export class MainPanel {
 
       MainPanel.currentPanel = new MainPanel(panel, context)
     }
-    MainPanel.currentPanel._panel.webview.postMessage({ type: 'hello', data: 'Hello World!' })
+    MainPanel.currentPanel._panel.webview.postMessage({ type: 'hello', data: l10n.t('Hello World!') })
   }
 
   /**
